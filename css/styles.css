@@ -1,0 +1,200 @@
+@font-face {
+  font-family: RozhaOneRegular;
+  src: url(RozhaOne-Regular.ttf) format("TrueType");
+}
+@font-face {
+  font-family: MontserratRegular;
+  src: url(Montserrat-Regular.ttf) format("TrueType");
+}
+@font-face {
+  font-family: MontserratBold;
+  src: url(Montserrat-Bold.ttf) format("TrueType");
+}
+@font-face {
+  font-family: MontserratSemiBold;
+  src: url(Montserrat-SemiBold.ttf) format("TrueType");
+}
+@font-face {
+  font-family: MontserratLight;
+  src: url(Montserrat-Light.ttf) format("TrueType");
+}
+@font-face {
+  font-family: MontserratItalic;
+  src: url(Montserrat-Italic.ttf) format("TrueType");
+}
+html {
+  
+  height: 100%;
+  
+}
+body{
+  background: #ecfbfc !important;
+}
+.parent-section {
+  max-width: 27rem;
+  margin: 0 auto;
+  background: #ecfbfc;
+  height: 100%;
+  
+}
+
+.section1 {
+  
+  background: #ecfbfc;
+}
+
+.section2 {
+  padding: .5rem 0 .5rem;
+  font-size: 1rem;
+  color: azure;
+}
+
+.logo {
+    font-size:1rem;
+}
+.p-style{
+  font-size: 12px;
+}
+
+.icon-text{
+  font-size: 12px;
+}
+.icon-style{
+  margin-top: -20px; 
+  left: 28px;
+  background: #fff;
+  width: 20px;
+  border-radius: 10px;
+}
+
+.user_text{
+  font-size: 10px;
+}
+
+.fixed-section {
+  /* position: sticky;
+  max-width: 100%;
+  margin: 0 auto;
+  z-index: 1;
+  position: -webkit-sticky;
+  top: 0; */
+  position: fixed;
+ width: 100%;
+   max-width: 27rem;
+  margin: 0 auto;
+  top:  0;
+  z-index: 1;
+  
+  
+}
+.fixed-section1 {
+  position: fixed;
+  /* max-width: 100%;
+  margin: 0 auto;
+  z-index: 1;
+  position: -webkit-sticky;
+  bottom: 0; */
+ width: 100%;
+    max-width: 27rem;
+  margin: 0 auto;
+  bottom: 0;
+  z-index: 1;
+
+}
+
+.mobile-bottom-nav {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  height: 50px;
+}
+
+.mobile-bottom-nav__item {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mobile-bottom-nav__item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.radio{
+
+    cursor:pointer;
+  
+  
+}
+
+.radio.selected{
+   
+    background: rgb(230, 230, 230);
+    
+}
+
+.form-group .file-upload-default {
+  visibility: hidden;
+  position: absolute; }
+
+.form-group .file-upload-info {
+  background: transparent; }
+
+
+
+
+/* ----------- iPad Pro ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+  .user-img img {
+    height: 80px;
+    width: 80px;
+  }
+  .parent-section {
+  max-width: 80rem;
+
+}
+.section2 {
+  padding: 2rem 0 2rem;
+  font-size: 3.5rem;
+  color: azure;
+}
+.logo {
+    font-size:4rem;
+}
+.mdi-36px { font-size: 36px; }
+.mdi-48px { font-size: 48px; }
+
+.mobile-bottom-nav {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  height: 60px;
+}
+
+.mobile-bottom-nav__item {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mobile-bottom-nav__item .mdi-24px.mdi:before {
+    font-size: 46px;
+} 
+
+
+.custom_icon1 .mdi-24px.mdi:before {
+    font-size: 46px;
+} 
+
