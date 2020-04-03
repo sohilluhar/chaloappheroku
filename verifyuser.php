@@ -12,34 +12,35 @@ if (mysqli_num_rows($res) == 1) {
     $_SESSION["name"] = $row['name'];
 
     ?>
-    <script>
-        window.location.href = "./index.php";
-    </script>
-    <?php
+<script>
+window.location.href = "./index.php";
+</script>
+<?php
 } else {
     ?>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>ChaloApp</title>
-    </head>
-    <body>
-    </body>
-    <script src="plugins/swal2.js"></script>
-    <script>
-        Swal.fire({
-                icon: "error",
-                title: "Wrong Emailid or Password"
-            }
-        ).then(function () {
-            window.location.href = "./login.php";
-        });
+<!DOCTYPE html>
+<html lang="en">
 
-    </script>
-    </html>
+<head>
+    <meta charset="UTF-8">
+    <title>ChaloApp</title>
+</head>
 
-    <?php
+<body>
+</body>
+<script src="plugins/swal2.js"></script>
+<script>
+Swal.fire({
+    icon: "error",
+    title: "Wrong Emailid or Password"
+}).then(function() {
+    window.location.href = "./login.php";
+});
+</script>
+
+</html>
+
+<?php
 }
 ?>

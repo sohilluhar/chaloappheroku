@@ -38,13 +38,19 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="bootstrap-media">
-                                    <form>
+                                <form method="post" action="addactivitytodb.php">
 
                                         <div class="row align-items-center mb-2">
                                             <div class="col-12">
                                                 <div class="input-group">
                                                     <input type=" text" class="form-control"
-                                                        placeholder="Search activity">
+                                                       placeholder="Search activity"
+                                                       name="activity_type" id="activity_type"
+                                                    <?php if (isset($_SESSION['activity_type'])) {
+                                                        print 'value="' . trim($_SESSION['activity_type']) . '"';
+                                                        unset($_SESSION['activity_type']);
+                                                    }
+                                                    ?>/>
                                                     <span class="input-group-text bg-white ml-4">
                                                         <a href="activities.php">
                                                             <i
@@ -99,7 +105,9 @@
                                             <div class="col-12">
                                                 <div class="input-group">
                                                     <input type=" text" class="form-control"
-                                                        placeholder="Search for a place">
+                                                       placeholder="Search for a place"
+                                                       name="location" id="location"
+                                                />
                                                     <span class="input-group-text bg-white ml-4">
                                                         <a href="map.php">
                                                             <i class="mdi mdi-map-marker mdi-24px text-primary"></i>
@@ -122,21 +130,25 @@
 
                                         <label class="m-t-20">Start Time</label>
                                         <div class="input-group">
-                                            <input type="time" class="form-control" value=""> <span
-                                                class="input-group-append"><span class="input-group-text"><i
-                                                        class="fa fa-clock-o"></i></span></span>
+                                        <input type="time" name="sname" class="form-control" value=""/>
+                                        <span class="input-group-append">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-clock-o"></i>
+                                            </span>
+                                        </span>
                                         </div>
 
 
                                         <label class="m-t-20 mt-2">End Time</label>
                                         <div class="input-group">
-                                            <input type="time" class="form-control" value=""> <span
+                                        <input type="time" name="ename" class="form-control" value=""> <span
                                                 class="input-group-append"><span class="input-group-text"><i
                                                         class="fa fa-clock-o"></i></span></span>
                                         </div>
 
                                         <div class="form-check mb-2 mt-3">
-                                            <input class="form-check-input" type="checkbox">
+                                        <input class="form-check-input" name="time_change" type="checkbox"
+                                               value="1">
                                             <label class="form-check-label">Let others propose time changes</label>
                                         </div>
 
@@ -204,35 +216,35 @@
 
                                                 <div class="form-group">
 
-                                                    <select class="form-control" id="sel1">
-                                                        <option>1 peoples</option>
-                                                        <option>2 peoples</option>
-                                                        <option>3 peoples</option>
-                                                        <option>4 peoples</option>
-                                                        <option>5 peoples</option>
-                                                        <option>6 peoples</option>
-                                                        <option>7 peoples</option>
-                                                        <option>8 peoples</option>
-                                                        <option>9 peoples</option>
-                                                        <option>10 peoples</option>
-                                                        <option>11 peoples</option>
-                                                        <option>12 peoples</option>
-                                                        <option>13 peoples</option>
-                                                        <option>14 peoples</option>
-                                                        <option>15 peoples</option>
-                                                        <option>16 peoples</option>
-                                                        <option>17 peoples</option>
-                                                        <option>18 peoples</option>
-                                                        <option>19 peoples</option>
-                                                        <option>20 peoples</option>
-                                                        <option>21 peoples</option>
-                                                        <option>22 peoples</option>
-                                                        <option>23 peoples</option>
-                                                        <option>24 peoples</option>
-                                                        <option>25 peoples</option>
-                                                        <option>26 peoples</option>
-                                                        <option>27 peoples</option>
-                                                        <option>28 peoples</option>
+                                                <select class="form-control" id="sel1" name="sel1">
+                                                    <option value="1">1 peoples</option>
+                                                    <option value="2">2 peoples</option>
+                                                    <option value="3">3 peoples</option>
+                                                    <option value="4">4 peoples</option>
+                                                    <option value="5">5 peoples</option>
+                                                    <option value="6">6 peoples</option>
+                                                    <option value="7">7 peoples</option>
+                                                    <option value="8">8 peoples</option>
+                                                    <option value="9">9 peoples</option>
+                                                    <option value="10">10 peoples</option>
+                                                    <option value="11">11 peoples</option>
+                                                    <option value="12">12 peoples</option>
+                                                    <option value="13">13 peoples</option>
+                                                    <option value="14">14 peoples</option>
+                                                    <option value="15">15 peoples</option>
+                                                    <option value="16">16 peoples</option>
+                                                    <option value="17">17 peoples</option>
+                                                    <option value="18">18 peoples</option>
+                                                    <option value="19">19 peoples</option>
+                                                    <option value="20">20 peoples</option>
+                                                    <option value="21">21 peoples</option>
+                                                    <option value="22">22 peoples</option>
+                                                    <option value="23">23 peoples</option>
+                                                    <option value="24">24 peoples</option>
+                                                    <option value="25">25 peoples</option>
+                                                    <option value="26">26 peoples</option>
+                                                    <option value="27">27 peoples</option>
+                                                    <option value="28">28 peoples</option>
                                                     </select>
                                                 </div>
 
@@ -249,7 +261,8 @@
 
                                         </div>
                                         <div class="text-center">
-                                            <button class="btn btn-primary btn-block">Broadcast Activity</button>
+                                        <button class="btn btn-primary btn-block" type="submit">Broadcast Activity
+                                        </button>
                                         </div>
                                     </form>
 

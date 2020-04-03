@@ -2,8 +2,17 @@
 <html>
 
 <head>
-    <?php include('include/head.php');?>
-
+    <?php include('include/head.php'); ?>
+    <?php
+    if (isset($_POST['radio-value'])) {
+        $_SESSION['activity_type'] = $_POST['radio-value'];
+        ?>
+        <script>
+            window.location.href = "./add_activity.php";
+        </script>
+        <?php
+    }
+    ?>
 </head>
 
 <body>
@@ -32,7 +41,7 @@
         <section class="section1 bg-white">
 
             <div class="container-fluid">
-                <form method="post" action="send.php">
+            <form method="post" id="activitiesform">
                     <div class="radio-group">
                         <div class="col-12">
                             <p>Outdoors and Adventures</p>
@@ -677,7 +686,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="text" id="radio-value" name="radio-value" value="" />
+                    <input type="text" id="radio-value" name="radio-value" value="" hidden/>
 
                     </div>
                 </form>
@@ -685,7 +694,7 @@
                 <div class="row">
 
                     <div class="col-12 text-center mb-4">
-                        <p class="text-primary">can't find your activity? Suggest it to us!</p>
+                    <p class="text-primary">Can't find your activity? Suggest it to us!</p>
                         <form action="">
                             <div class="form-group">
                                 <input type="text" class="form-control input-default"

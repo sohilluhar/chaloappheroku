@@ -3,6 +3,9 @@
 
 <head>
     <?php include('include/head.php');?>
+    <?php
+
+    ?>
 
 </head>
 
@@ -35,6 +38,16 @@
         <section class="section1 mt-3">
             <div class="container-fluid">
                 <div class="row">
+
+                <?php
+
+
+                $res = mysqli_query($con, "SELECT * FROM activity");
+
+                while ($row = mysqli_fetch_assoc($res)) {
+                    $user_row = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM users where  id=" . $row['userid']));
+
+                    ?>
                     <!-- Card Start -->
                     <div class="col-lg-12">
                         <a href="activity_details.php">
@@ -45,7 +58,7 @@
                                             <img class="align-self-start mr-3 circle-40" src="images/avatar/1.jpg"
                                                 alt="">
                                             <div class="media-body">
-                                                <h5 class="mt-0">Abdul Quadir Ansari
+                                                <h5 class="mt-0">  <?php echo $user_row['name'] ?>
 
                                                     <span><i class="mdi mdi-share mdi-24px float-right"></i></span>
                                                 </h5>
@@ -64,21 +77,21 @@
                                             </div>
                                         </div>
                                         <hr style="margin-top:5px;">
-                                        <h5 class="text-primary" style="margin-top:-8px;">LetsGo Walking <span class="
-                                            float-right"> Wed 19,
-                                                Feb</span>
+                                        <h5 class="text-primary" style="margin-top:-8px;">
+                                            <?php echo $row['type'] ?>
+                                            <span class="
+                                            float-right"> <?php echo $row['date'] ?></span>
                                         </h5>
                                         <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-timer mdi-18px mr-1"></i>10:30
-                                            PM
+                                                    class="mdi mdi-timer mdi-18px mr-1"></i><?php echo $row['stime'] ?>
                                         </span>
                                         <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-human-male-female mdi-18px mr-1"></i>1/6
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-map-marker mdi-18px mr-1"></i>Mumbai
+                                                    class="mdi mdi-human-male-female mdi-18px mr-1"></i>1/<?php echo $row['nopeople'] ?>
 
+                                        </span>
+                                        <span class="icon-text text-dark mr-3">
+                                            <i class="mdi mdi-map-marker mdi-18px mr-1"></i>
+                                            <?php echo $row['location'] ?>
                                         </span>
                                     </div>
                                 </div>
@@ -86,326 +99,8 @@
                         </a>
                     </div>
                     <!-- Card End  -->
-                    <!-- Card Start -->
-                    <div class="col-lg-12">
-                        <a href="activity_details.php">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="bootstrap-media">
-                                        <div class="media">
-                                            <img class="align-self-start mr-3 circle-40" src="images/avatar/1.jpg"
-                                                alt="">
-                                            <div class="media-body">
-                                                <h5 class="mt-0">Abdul Quadir Ansari
-
-                                                    <span><i class="mdi mdi-share mdi-24px float-right"></i></span>
-                                                </h5>
-                                                <p class="p-style text-dark" style="margin-top:-5px; "><span
-                                                        style="color:#FFDF00;"><i
-                                                            class="mdi mdi-trophy-variant mdi-18px mr-2"></i></span>
-                                                    1 activity Done</p>
-
-                                                <p class="p-style text-dark" style="margin-top:-12px;">Male, Mumbai
-                                                    <span class="float-right">
-                                                        English
-                                                        <br>0.00
-                                                        km away
-                                                    </span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <hr style="margin-top:5px;">
-                                        <h5 class="text-primary" style="margin-top:-8px;">LetsGo Walking <span class="
-                                            float-right"> Wed 19,
-                                                Feb</span>
-                                        </h5>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-timer mdi-18px mr-1"></i>10:30
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-human-male-female mdi-18px mr-1"></i>1/6
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-map-marker mdi-18px mr-1"></i>Mumbai
-
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Card End  -->
-                    <!-- Card Start -->
-                    <div class="col-lg-12">
-                        <a href="activity_details.php">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="bootstrap-media">
-                                        <div class="media">
-                                            <img class="align-self-start mr-3 circle-40" src="images/avatar/1.jpg"
-                                                alt="">
-                                            <div class="media-body">
-                                                <h5 class="mt-0">Abdul Quadir Ansari
-
-                                                    <span><i class="mdi mdi-share mdi-24px float-right"></i></span>
-                                                </h5>
-                                                <p class="p-style text-dark" style="margin-top:-5px; "><span
-                                                        style="color:#FFDF00;"><i
-                                                            class="mdi mdi-trophy-variant mdi-18px mr-2"></i></span>
-                                                    1 activity Done</p>
-
-                                                <p class="p-style text-dark" style="margin-top:-12px;">Male, Mumbai
-                                                    <span class="float-right">
-                                                        English
-                                                        <br>0.00
-                                                        km away
-                                                    </span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <hr style="margin-top:5px;">
-                                        <h5 class="text-primary" style="margin-top:-8px;">LetsGo Walking <span class="
-                                            float-right"> Wed 19,
-                                                Feb</span>
-                                        </h5>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-timer mdi-18px mr-1"></i>10:30
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-human-male-female mdi-18px mr-1"></i>1/6
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-map-marker mdi-18px mr-1"></i>Mumbai
-
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Card End  -->
-                    <!-- Card Start -->
-                    <div class="col-lg-12">
-                        <a href="activity_details.php">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="bootstrap-media">
-                                        <div class="media">
-                                            <img class="align-self-start mr-3 circle-40" src="images/avatar/1.jpg"
-                                                alt="">
-                                            <div class="media-body">
-                                                <h5 class="mt-0">Abdul Quadir Ansari
-
-                                                    <span><i class="mdi mdi-share mdi-24px float-right"></i></span>
-                                                </h5>
-                                                <p class="p-style text-dark" style="margin-top:-5px; "><span
-                                                        style="color:#FFDF00;"><i
-                                                            class="mdi mdi-trophy-variant mdi-18px mr-2"></i></span>
-                                                    1 activity Done</p>
-
-                                                <p class="p-style text-dark" style="margin-top:-12px;">Male, Mumbai
-                                                    <span class="float-right">
-                                                        English
-                                                        <br>0.00
-                                                        km away
-                                                    </span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <hr style="margin-top:5px;">
-                                        <h5 class="text-primary" style="margin-top:-8px;">LetsGo Walking <span class="
-                                            float-right"> Wed 19,
-                                                Feb</span>
-                                        </h5>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-timer mdi-18px mr-1"></i>10:30
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-human-male-female mdi-18px mr-1"></i>1/6
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-map-marker mdi-18px mr-1"></i>Mumbai
-
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Card End  -->
-                    <!-- Card Start -->
-                    <div class="col-lg-12">
-                        <a href="activity_details.php">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="bootstrap-media">
-                                        <div class="media">
-                                            <img class="align-self-start mr-3 circle-40" src="images/avatar/1.jpg"
-                                                alt="">
-                                            <div class="media-body">
-                                                <h5 class="mt-0">Abdul Quadir Ansari
-
-                                                    <span><i class="mdi mdi-share mdi-24px float-right"></i></span>
-                                                </h5>
-                                                <p class="p-style text-dark" style="margin-top:-5px; "><span
-                                                        style="color:#FFDF00;"><i
-                                                            class="mdi mdi-trophy-variant mdi-18px mr-2"></i></span>
-                                                    1 activity Done</p>
-
-                                                <p class="p-style text-dark" style="margin-top:-12px;">Male, Mumbai
-                                                    <span class="float-right">
-                                                        English
-                                                        <br>0.00
-                                                        km away
-                                                    </span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <hr style="margin-top:5px;">
-                                        <h5 class="text-primary" style="margin-top:-8px;">LetsGo Walking <span class="
-                                            float-right"> Wed 19,
-                                                Feb</span>
-                                        </h5>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-timer mdi-18px mr-1"></i>10:30
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-human-male-female mdi-18px mr-1"></i>1/6
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-map-marker mdi-18px mr-1"></i>Mumbai
-
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Card End  -->
-                    <!-- Card Start -->
-                    <div class="col-lg-12">
-                        <a href="activity_details.php">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="bootstrap-media">
-                                        <div class="media">
-                                            <img class="align-self-start mr-3 circle-40" src="images/avatar/1.jpg"
-                                                alt="">
-                                            <div class="media-body">
-                                                <h5 class="mt-0">Abdul Quadir Ansari
-
-                                                    <span><i class="mdi mdi-share mdi-24px float-right"></i></span>
-                                                </h5>
-                                                <p class="p-style text-dark" style="margin-top:-5px; "><span
-                                                        style="color:#FFDF00;"><i
-                                                            class="mdi mdi-trophy-variant mdi-18px mr-2"></i></span>
-                                                    1 activity Done</p>
-
-                                                <p class="p-style text-dark" style="margin-top:-12px;">Male, Mumbai
-                                                    <span class="float-right">
-                                                        English
-                                                        <br>0.00
-                                                        km away
-                                                    </span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <hr style="margin-top:5px;">
-                                        <h5 class="text-primary" style="margin-top:-8px;">LetsGo Walking <span class="
-                                            float-right"> Wed 19,
-                                                Feb</span>
-                                        </h5>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-timer mdi-18px mr-1"></i>10:30
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-human-male-female mdi-18px mr-1"></i>1/6
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-map-marker mdi-18px mr-1"></i>Mumbai
-
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Card End  -->
-                    <!-- Card Start -->
-                    <div class="col-lg-12">
-                        <a href="activity_details.php">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="bootstrap-media">
-                                        <div class="media">
-                                            <img class="align-self-start mr-3 circle-40" src="images/avatar/1.jpg"
-                                                alt="">
-                                            <div class="media-body">
-                                                <h5 class="mt-0">Abdul Quadir Ansari
-
-                                                    <span><i class="mdi mdi-share mdi-24px float-right"></i></span>
-                                                </h5>
-                                                <p class="p-style text-dark" style="margin-top:-5px; "><span
-                                                        style="color:#FFDF00;"><i
-                                                            class="mdi mdi-trophy-variant mdi-18px mr-2"></i></span>
-                                                    1 activity Done</p>
-
-                                                <p class="p-style text-dark" style="margin-top:-12px;">Male, Mumbai
-                                                    <span class="float-right">
-                                                        English
-                                                        <br>0.00
-                                                        km away
-                                                    </span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <hr style="margin-top:5px;">
-                                        <h5 class="text-primary" style="margin-top:-8px;">LetsGo Walking <span class="
-                                            float-right"> Wed 19,
-                                                Feb</span>
-                                        </h5>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-timer mdi-18px mr-1"></i>10:30
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-human-male-female mdi-18px mr-1"></i>1/6
-                                            PM
-                                        </span>
-                                        <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-map-marker mdi-18px mr-1"></i>Mumbai
-
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Card End  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    <?php
+                } ?>
 
                 </div>
             </div>

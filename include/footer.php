@@ -60,6 +60,8 @@ $('.radio-group .radio').click(function() {
     console.log($(this).closest());
 
     $(this).parents('.radio-group').find('input').val(val);
+        document.getElementById("activitiesform").submit();
+
 });
   </script>
 

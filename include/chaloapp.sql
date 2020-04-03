@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 03, 2020 at 03:36 PM
+-- Generation Time: Apr 03, 2020 at 09:20 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -21,6 +21,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `chaloapp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `activity`
+--
+
+CREATE TABLE `activity` (
+  `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `type` text NOT NULL,
+  `location` text NOT NULL,
+  `date` text NOT NULL,
+  `stime` text NOT NULL,
+  `etime` text NOT NULL,
+  `time_change` text NOT NULL,
+  `nopeople` text NOT NULL,
+  `note` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `activity`
+--
+
+INSERT INTO `activity` (`id`, `userid`, `type`, `location`, `date`, `stime`, `etime`, `time_change`, `nopeople`, `note`) VALUES
+(1, 1, 'Walking', 'Mumbai', '2020-04-16', '11:00', '12:00 ', '0', '9 ', ' '),
+(2, 1, 'Beach', 'Mumbai', '2020-04-15', '11:22', '12:30 ', '1', '17 ', 'note '),
+(3, 1, 'Paintballing', 'Mumbai', '2020-02-11', '10:00', '11:00 ', '1', '10 ', 'Have Fun '),
+(4, 1, 'City Tour', 'Mumbai', '2020-04-15', '12:00', '03:10 ', '1', '12 ', 'let talk ');
 
 -- --------------------------------------------------------
 
@@ -47,6 +76,12 @@ INSERT INTO `users` (`id`, `mail`, `password`, `name`) VALUES
 --
 
 --
+-- Indexes for table `activity`
+--
+ALTER TABLE `activity`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -55,6 +90,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `activity`
+--
+ALTER TABLE `activity`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`

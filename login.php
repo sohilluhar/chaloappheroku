@@ -3,6 +3,16 @@
 
 <head>
     <?php include('include/head.php'); ?>
+    <?php
+    if (isset($_SESSION["login"])) {
+
+        echo '
+    <script>
+    window.location.href="index.php";
+    </script>
+    ';
+    }
+    ?>
 
 </head>
 
@@ -30,7 +40,7 @@
 
     <!-- Main Body-->
     <section class="section1">
-        <form action="verifyuser.php" method="post">
+        <form action="verifyuser.php" method="post" class="login-input">
             <div class="container-fluid">
 
                 <div class="row">
@@ -53,13 +63,13 @@
 
 
                                 <div class="form-group">
-                                    <label>Email Address</label>
+
                                     <input type="email" name="user_mail" class="form-control input-default"
                                            placeholder="Email Address" value="">
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Password</label>
+
                                     <input type="password" name="pass" class="form-control input-default"
                                            placeholder="Enter Password" value="">
                                 </div>
