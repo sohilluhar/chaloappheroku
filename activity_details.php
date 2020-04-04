@@ -8,8 +8,9 @@
     $user_row = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM users where  id=" . $activity_row['userid']));
     $useractivity_done = mysqli_num_rows(mysqli_query($con, "SELECT type FROM activity where  userid=" . $activity_row['userid']));
 
-    $checkjoin = mysqli_num_rows(mysqli_query($con, "SELECT id FROM activity_request where  activity_requestid=" . $activity_row['id'] . " and userid=" . $_SESSION['id']));
-
+    $checkjoinres = mysqli_query($con, "SELECT status FROM activity_request where  activity_requestid=" . $activity_row['id'] . " and userid=" . $_SESSION['id']);
+    $statusr = mysqli_fetch_assoc($checkjoinres);
+    $status = $statusr['status'];
     ?>
 
 
@@ -122,7 +123,7 @@
                                         <input name="username" value="<?php echo $user_row['name'] ?>" hidden/>
 
                                         <?php
-                                        if ($checkjoin == 0) {
+                                        if (mysqli_num_rows($checkjoinres) == 0) {
                                             ?>
 
                                             <button type="submit" class="btn btn-primary" data-toggle="modal"
@@ -132,7 +133,7 @@
                                         } else {
                                             ?>
                                             <button type="button" class="btn btn-primary" data-toggle="modal"
-                                            >Request Send to Join Activity
+                                            >Request <?php echo $status; ?>
                                             </button>
                                             <?php
                                         } ?>
@@ -167,40 +168,47 @@
 
                                     <div class="bootstrap-modal">
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-link link-style"
-                                                style="text-decoration:none" data-toggle="modal"
-                                                data-target="#exampleModalCenter">Propose a new Time
-                                        </button>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="exampleModalCenter">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Propose New Time</h5>
-                                                        <button type="button" class="close"
-                                                                data-dismiss="modal"><span>&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <label class="m-t-20">Enter New Time</label>
-                                                        <div class="input-group">
-                                                            <input type="time" class="form-control" value="">
-                                                            <span class="input-group-append"><span
-                                                                        class="input-group-text"><i
-                                                                            class="fa fa-clock-o"></i></span></span>
+                                        <?php
+                                        if ($activity_row['time_change'] == '1' && $status != 'Reject') {
+                                            ?>
+
+                                            <button type="button" class="btn btn-link link-style"
+                                                    style="text-decoration:none" data-toggle="modal"
+                                                    data-target="#exampleModalCenter">Propose a new Time
+                                            </button>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModalCenter">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Propose New Time</h5>
+                                                            <button type="button" class="close"
+                                                                    data-dismiss="modal"><span>&times;</span>
+                                                            </button>
                                                         </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Close
-                                                        </button>
-                                                        <button type="button" class="btn btn-primary">Submit
-                                                            Time
-                                                        </button>
+                                                        <div class="modal-body">
+                                                            <label class="m-t-20">Enter New Time</label>
+                                                            <div class="input-group">
+                                                                <input type="time" class="form-control" value="">
+                                                                <span class="input-group-append"><span
+                                                                            class="input-group-text"><i
+                                                                                class="fa fa-clock-o"></i></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary">Submit
+                                                                Time
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+
+                                            <?php
+                                        } ?>
                                     </div>
                                 </div>
 

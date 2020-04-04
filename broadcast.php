@@ -61,14 +61,11 @@
 
                 <?php
 
+                //                SELECT * FROM `activity` WHERE 1
+                $res = mysqli_query($con, "SELECT * FROM activity where userid=" . $_SESSION['id']);
 
-                $res = mysqli_query($con, "SELECT * FROM activity_request where created_by=" . $_SESSION['id'] . " and status='Pending' order by id desc ");
-
-                while ($row = mysqli_fetch_assoc($res)) {
-                    $activityrow = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM activity where  id=" . $row['activity_requestid']));
-                    $user_row = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM users where  id=" . $row['userid']));
-                    $useractivity_done = mysqli_num_rows(mysqli_query($con, "SELECT type FROM activity where  userid=" . $row['userid']));
-
+                while ($activityrow = mysqli_fetch_assoc($res)) {
+                    $usergoingactivity = mysqli_num_rows(mysqli_query($con, "SELECT id FROM activity_request where  activity_requestid=" . $activityrow['id'] . " and status='Accept'"));
 
                     ?>
 
@@ -88,7 +85,7 @@
                                                 class="mdi mdi-timer mdi-18px mr-1"></i><?php echo $activityrow['stime'] ?>
                                     </span>
                                     <span class="icon-text text-dark mr-3"><i
-                                                class="mdi mdi-human-male-female mdi-18px mr-1"></i>1/<?php echo $activityrow['nopeople'] ?>
+                                                class="mdi mdi-human-male-female mdi-18px mr-1"></i><?php echo $usergoingactivity . "/" . $activityrow['nopeople'] ?>
                                     </span>
                                     <span class="icon-text text-dark mr-3"><i
                                                 class="mdi mdi-map-marker mdi-18px mr-1"></i><?php echo $activityrow['location'] ?>
@@ -96,80 +93,99 @@
                                     </span>
                                     <hr>
                                     <p>Responded </p>
-                                    <div class="media">
 
-                                        <img class="align-self-start mr-3 circle-40" src="images/avatar/1.jpg" alt="">
-                                        <div class="media-body">
-                                            <h5 class="mt-0"><?php echo $user_row['name'] ?>
+                                    <?php
+                                    $activity_requestres = mysqli_query($con, "SELECT * FROM activity_request where activity_requestid=" . $activityrow['id'] . " and status='Pending' order by id desc ");
 
-                                                <span class="text-primary">wants to join </span>
-                                            </h5>
-                                            <p class="p-style text-dark" style="margin-top:-5px; "><span
-                                                        style="color:#FFDF00;"><i
-                                                            class="mdi mdi-trophy-variant mdi-18px mr-2"></i></span>
-                                                <?php echo $useractivity_done ?> activity Done</p>
+                                    while ($activity_requestrow = mysqli_fetch_assoc($activity_requestres)) {
+                                        $user_row = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM users where  id=" . $activity_requestrow['userid']));
+                                        $useractivity_done = mysqli_num_rows(mysqli_query($con, "SELECT type FROM activity where  userid=" . $activity_requestrow['userid']));
 
-                                            <p class="p-style text-dark"
-                                               style="margin-top:-12px;"><?php echo $user_row['gender'] ?>, Mumbai
-                                                <span class="float-right">
+
+                                        ?>
+
+                                        <div class="media">
+
+                                            <img class="align-self-start mr-3 circle-40" src="images/avatar/1.jpg"
+                                                 alt="">
+                                            <div class="media-body">
+                                                <h5 class="mt-0"><?php echo $user_row['name'] ?>
+
+                                                    <span class="text-primary">wants to join </span>
+                                                </h5>
+                                                <p class="p-style text-dark" style="margin-top:-5px; "><span
+                                                            style="color:#FFDF00;"><i
+                                                                class="mdi mdi-trophy-variant mdi-18px mr-2"></i></span>
+                                                    <?php echo $useractivity_done ?> activity Done</p>
+
+                                                <p class="p-style text-dark"
+                                                   style="margin-top:-12px;"><?php echo $user_row['gender'] ?>, Mumbai
+                                                    <span class="float-right">
                                                     English
                                                     <br>0.00
                                                     km away
                                                 </span>
-                                            </p>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <hr>
-                                    <div class="text-center">
+                                        <hr>
+                                        <div class="text-center">
 
-                                        <form method="post" action="updateactivityreq.php">
+                                            <form method="post" action="updateactivityreq.php">
 
-                                            <input name="activityid" type="hidden"
-                                                   value="<?php echo $row['id'] ?>">
-                                            <button type="submit" name="accept"
-                                                    class="btn btn-success btn-xs px-5 text-white mr-3">
-                                                Accept <i
-                                                        class="mdi mdi-check ml-1"></i></button>
-                                            <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-outline-danger btn-xs px-5"
-                                                    data-toggle="modal" data-target="#decline_req">Decline <i
-                                                        class="mdi mdi-close ml-1"></i></button>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="decline_req">
-                                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title">Decline</h5>
-                                                            <button type="button" class="close"
-                                                                    data-dismiss="modal"><span>&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="basic-form">
-                                                                <form>
-                                                                    <div class="form-group">
-                                                                        <label>Reason</label>
-                                                                        <textarea class="form-control h-150px"
-                                                                                  name="remark"
-                                                                                  rows="6"
-                                                                                  id="comment"></textarea>
-                                                                    </div>
-                                                                </form>
+                                                <input name="activityid" type="hidden"
+                                                       value="<?php echo $activity_requestrow['id'] ?>">
+                                                <button type="submit" name="accept"
+                                                        class="btn btn-success btn-xs px-5 text-white mr-3">
+                                                    Accept <i
+                                                            class="mdi mdi-check ml-1"></i></button>
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="btn btn-outline-danger btn-xs px-5"
+                                                        data-toggle="modal" data-target="#decline_req">Decline <i
+                                                            class="mdi mdi-close ml-1"></i></button>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="decline_req">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Decline</h5>
+                                                                <button type="button" class="close"
+                                                                        data-dismiss="modal"><span>&times;</span>
+                                                                </button>
                                                             </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal">Close
-                                                            </button>
-                                                            <button type="submit" name="reject" class="btn btn-primary">
-                                                                Send
-                                                            </button>
+                                                            <div class="modal-body">
+                                                                <div class="basic-form">
+                                                                    <form>
+                                                                        <div class="form-group">
+                                                                            <label>Reason</label>
+                                                                            <textarea class="form-control h-150px"
+                                                                                      name="remark"
+                                                                                      rows="6"
+                                                                                      id="comment"></textarea>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close
+                                                                </button>
+                                                                <button type="submit" name="reject"
+                                                                        class="btn btn-primary">
+                                                                    Send
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                            </form>
+                                        </div>
+                                        <br>
+                                        <?php
+
+                                    } ?>
+
+
                                 </div>
                             </div>
                         </div>

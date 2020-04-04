@@ -34,7 +34,7 @@
     if (mysqli_num_rows($res) == 0) {
 
     $sql = "INSERT INTO `users`(`mail`, `password`, `name`, `gender`, `dob`, `age_hide`, `contact`) VALUES 
-('" . strtolower($_POST['user_mail']) . "',' " . trim($_POST['pass1']) . "',' " . $_POST['firstname'] . " " . $_POST['lastname'] . "',
+('" . strtolower($_POST['user_mail']) . "','" . trim($_POST['pass1']) . "',' " . $_POST['firstname'] . " " . $_POST['lastname'] . "',
 ' " . $_POST['radio-value'] . "','" . $_POST['dob'] . "' ,'" . $hideage . "','" . $_POST['contact'] . "' )";
 
     //print $SQL;

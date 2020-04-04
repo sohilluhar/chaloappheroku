@@ -42,7 +42,7 @@
                 <?php
 
 
-                $res = mysqli_query($con, "SELECT * FROM activity order by id desc ");
+                $res = mysqli_query($con, "SELECT * FROM activity order by date  ");
 
                 while ($row = mysqli_fetch_assoc($res)) {
                     $user_row = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM users where  id=" . $row['userid']));
