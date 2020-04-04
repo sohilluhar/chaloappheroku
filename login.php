@@ -22,7 +22,7 @@
         <div class="container ">
             <div class="row align-items-center">
                 <div class="col-3 custom_icon1">
-                    <a href="home.php">
+                    <a href="index.php">
                         <i class="mdi mdi-keyboard-backspace mdi-24px text-white"></i>
                     </a>
                 </div>

@@ -13,7 +13,7 @@ if (mysqli_num_rows($res) >= 1) {
 
     ?>
     <script>
-        window.location.href = "./index.php";
+        window.location.href = "./homepage.php";
     </script>
     <?php
 } else {

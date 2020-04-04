@@ -31,10 +31,12 @@
                     <h2 class="text-white text-center"><span class="logo">Activity Details</span></h2>
                 </div>
                 <div class="col-3 ">
-                    <div class="user-img c-pointer position-relative float-right">
-                        <span class="activity active"></span>
-                        <img src="images/user/2.png" height="40" width="40" alt="">
-                    </div>
+                    <a href="profile.php">
+                        <div class="user-img c-pointer position-relative float-right">
+                            <span class="activity active"></span>
+                            <img src="images/user/2.png" height="40" width="40" alt="">
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

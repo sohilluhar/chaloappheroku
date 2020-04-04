@@ -1,9 +1,98 @@
+<!-- <!DOCTYPE html>-->
+<!-- <html>-->
+<!---->
+<!-- <head>-->
+<!--     --><?php //include('include/head.php');?>
+<!--     <style>-->
+<!--     /* .bg-opacity -->
+<!--         background: url"images/big/bg.jpeg" no-repeat center center;-->
+<!--         background-size: cover;-->
+<!--         height: 100vh;-->
+<!--     -->
+<!--     .bg-opacity::before  */-->
+<!---->
+<!--     .bg-opacity {-->
+<!---->
+<!--         display: block;-->
+<!--         position: relative;-->
+<!--         background: #000;-->
+<!--         height: 100vh;-->
+<!--     }-->
+<!---->
+<!--     .bg-opacity::before {-->
+<!--         content: "";-->
+<!--         background: url("images/big/bg.jpeg") no-repeat center center;-->
+<!--         opacity: 0.5;-->
+<!--         top: 0;-->
+<!--         left: 0;-->
+<!--         bottom: 0;-->
+<!--         right: 0;-->
+<!--         background-size: cover;-->
+<!--         position: absolute;-->
+<!---->
+<!--     }-->
+<!--     </style>-->
+<!---->
+<!-- </head>-->
+<!---->
+<!-- <body>-->
+<!--     <section class="parent-section bg-opacity">-->
+<!---->
+<!--         <div class="container">-->
+<!--             <div class="row">-->
+<!--                 <div class="col-12 text-center" style="margin-top:45%;">-->
+<!--                     <div class="mb-5">-->
+<!--                         <img class="mr-3" src="images/avatar/11.png" width="80" height="80" alt="">-->
+<!--                     </div>-->
+<!--                     <button type="button" class="btn mb-1 btn-primary"> <i class="mdi mdi-facebook mr-3"></i>Sign up-->
+<!--                         with-->
+<!--                         Facebook-->
+<!--                     </button>-->
+<!--                     <p class="text-white">we don't post anything on Facebook</p>-->
+<!---->
+<!--                     <button type="button" class="btn mb-1 btn-outline-danger"> <i class="mdi mdi-google mr-3"></i>Sign-->
+<!--                         up-->
+<!--                         using-->
+<!--                         Email-->
+<!--                     </button>-->
+<!--                     <div class="text-white px-5" style="margin-top:35%;">-->
+<!--                         <p class="">Already have account? <a href="login.php" class="text-primary">login</a></p>-->
+<!--                         <p class="">By continuting, you agree to our <a href="terms.php" class="text-primary">Terms and-->
+<!--                                 Conditions</a>-->
+<!--                             and-->
+<!--                             <a href="privacy.php" class="text-primary">Privacy-->
+<!--                                 Policy</a></p>-->
+<!--                     </div>-->
+<!--                 </div>-->
+<!--             </div>-->
+<!--         </div>-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--     --><?php //include('include/footer.php');?>
+<!---->
+<!---->
+<!---->
+<!-- </body>-->
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <?php include('include/head.php'); ?>
-    <?php include('include/checkuser.php'); ?>
+    <?php
+    if (isset($_SESSION["login"])) {
+
+        echo '
+    <script>
+    window.location.href="homepage.php";
+    </script>
+    ';
+    }
+    ?>
 
 </head>
 
@@ -13,44 +102,99 @@
         <div class="container ">
             <div class="row align-items-center">
                 <div class="col-3 custom_icon1">
-                    <i class="mdi mdi-settings mdi-24px text-white"></i>
+                    <a href="index.php">
+                        <i class="mdi mdi-keyboard-backspace mdi-24px text-white"></i>
+                    </a>
                 </div>
+
                 <div class="col-6">
-                    <h2 class="text-white text-center"><span class="logo">Chalo App</span></h2>
+                    <h2 class="text-white text-center"><span class="logo">Login</span></h2>
                 </div>
                 <div class="col-3 ">
-                    <div class="user-img c-pointer position-relative float-right">
-                        <span class="activity active"></span>
-                        <img src="images/user/2.png" height="40" width="40" alt="">
+
+
+                </div>
+            </div>
+    </section>
+    <br><br> <br><br>
+
+    <!-- Main Body-->
+    <section class="section1">
+        <form action="verifyuser.php" method="post" class="login-input">
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <!-- Card Start -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-4 text-center">
+                                    <button type="button" class="btn mb-1 btn-primary"><i
+                                                class="mdi mdi-facebook mr-3"></i>Sign up
+                                        with
+                                        Facebook
+                                    </button>
+                                </div>
+                                <h4 class="text-center text-primary"><i
+                                            class="mdi mdi-window-minimize mr-3"></i>or<i
+                                            class="mdi mdi-window-minimize ml-3"></i>
+                                </h4>
+
+
+                                <div class="form-group">
+
+                                    <input type="email" name="user_mail" class="form-control input-default"
+                                           placeholder="Email Address" value="">
+                                </div>
+
+                                <div class="form-group">
+
+                                    <input type="password" name="pass" class="form-control input-default"
+                                           placeholder="Enter Password" value="">
+                                </div>
+
+                                <button type="submit" name="login" class="btn btn-primary btn-block">Login</button>
+                                <p class="text-center
+                                     mt-3"><a href="forgot.php" class="text-primary">Forgot Password
+                                    </a>
+                                </p>
+
+                                <p class="text-dark text-center">Don't have an account ? <a href="signup.php"
+                                                                                            class="text-primary">Sign
+                                        up</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+
+    </section>
+
+    <form action="">
+        <!-- Modal -->
+        <div class="modal fade" id="unfollow">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        Are you sure you want to unfollow this user ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary  btn-sm" data-dismiss="modal">Close</button>
+                        <button type="button" name="remove_user" class="btn btn-primary btn-sm">Remove</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <br><br>
-
-    <!-- Main Body-->
-    <section class="section1 mt-3">
-
-        <!--        <div style="width: 100%">-->
-        <!--            <iframe width="100%" height="400"-->
-        <!--                    src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;coord=18.95471534252734,72.81193256378175&amp;q=Mumbai+(LetsGo%20Walking)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=A&amp;output=embed"-->
-        <!--                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a-->
-        <!--                        href="https://www.maps.ie/coordinates.html">find my location</a></iframe>-->
-        <!--        </div>-->
-        <!--        <br/>-->
-
-        <div class="responsive-map">
-            <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1737.6221882978507!2d-98.48650795000005!3d29.421653200000023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c58aa57e6a56f%3A0xf08a9ad66f03e879!2sHenry+B.+Gonzalez+Convention+Center!5e0!3m2!1sen!2sus!4v1393884854786"
-                    width="100%" height="700" frameborder="0" style="border:0"></iframe>
-        </div>
-    </section>
-
-    <?php include('include/bottom_bar.php'); ?>
+    </form>
 
     <!-- Main Body-->
 </section><!-- PARENT SECTION -->
+
 
 <?php include('include/footer.php'); ?>
 

@@ -137,7 +137,11 @@
                     <p><a href="edit_activity.php?id=<?php echo $_GET['id'] ?>" class="btn-link"
                           style="text-decoration:none;">Edit Activity</a>
                     </p>
-                    <p>Share</p>
+                    <!--                    TODO:: Replace text-->
+                    <p><a class="btn-link"
+                          href="whatsapp://send?text=Hey Check this activity ... on  http://sohilluhar.co/chaloapp/"
+                          data-action="share/whatsapp/share"
+                        >Share</a></p>
                     <p>Mute Chat</p>
                     <p>Cancel Activity</p>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
