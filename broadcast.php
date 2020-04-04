@@ -75,7 +75,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="bootstrap-media">
-                                    <a href="broadcast_act_click.php">
+                                    <a href="broadcast_act_click.php?id=<?php echo $activityrow['id'] ?>">
                                         <h5 class="text-primary"><?php echo $activityrow['type'] ?><span class="
                                             float-right"> <?php echo $activityrow['date'] ?> <i
                                                         class="mdi mdi-delete mdi-18px ml-2 text-danger"></i></span>
