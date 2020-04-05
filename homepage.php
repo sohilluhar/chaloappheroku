@@ -76,16 +76,30 @@
         //     label: {color: '#00aaff', fontWeight: 'bold', fontSize: '14px', text: 'Your text here'}
         // });
         var locations = [
-            ['Bondi Beach', -33.890542, 151.274856, 4, 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'],
-            ['Coogee Beach', -33.923036, 151.259052, 5, ''],
-            ['Cronulla Beach', -34.028249, 151.157507, 3, ''],
-            ['Manly Beach', -33.80010128657071, 151.28747820854187, 2, ''],
-            ['Maroubra Beach', -33.950198, 151.259302, 1, ''],
+
+            <?php
+
+            $res = mysqli_query($con, "SELECT * FROM activity order by date  ");
+
+            while ($row = mysqli_fetch_assoc($res)) {
+                $i = 0;
+                echo "    ['" . $row['type'] . "'," . $row['glat'] . " ," . $row['glong'] . ", " . $i . ", " . $row['id'] . ",'images/" . $row['marker'] . "'],";
+                $i = $i + 1;
+
+            }
+            ?>
+//
+//            ['Bondi Beach', -33.890542, 151.274856, 4, 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'],
+//            ['Coogee Beach', -33.923036, 151.259052, 5, ''],
+//            ['Cronulla Beach', -34.028249, 151.157507, 3, ''],
+//            ['Manly Beach', -33.80010128657071, 151.28747820854187, 2, ''],
+//            ['Maroubra Beach', -33.950198, 151.259302, 1, ''],
+
         ];
 
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 10,
-            center: new google.maps.LatLng(-33.92, 151.25),
+            center: new google.maps.LatLng(19.1020922, 72.8459594),
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
@@ -97,13 +111,12 @@
             marker = new google.maps.Marker({
                 position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                 map: map,
-                icon: locations[i][4]
+                icon: locations[i][5]
             });
 
             google.maps.event.addListener(marker, 'click', (function (marker, i) {
                 return function () {
-                    infowindow.setContent('<a href="' + locations[i][0] +
-                        '">' + locations [i][0] +
+                    infowindow.setContent('<a href=./activity_details.php?id=' + locations[i][4] + '>' + locations [i][0] +
                         '</a>'
                     )
                     ;

@@ -34,7 +34,7 @@
 
     <!-- Main Body-->
     <section class="section1">
-        <form action="updateuserprofile.php" method="post">
+        <form action="updateuserprofile.php" method="post" enctype="multipart/form-data">
             <div class="container-fluid">
 
                 <div class="row">
@@ -44,10 +44,15 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="mb-4 text-center">
-                                    <img class="mr-3" src="images/avatar/11.png" width="80" height="80" alt="">
+                                    <!--                                    src="images/avatar/11.png"-->
+
+                                    <img class="mr-3"
+                                         src="<?php echo $user_row['profileimage'] ?>"
+                                         width="80" height="80" alt="">
                                     <div class="form-group mt-2">
                                         <label>Upload Profile Image</label>
-                                        <input type="file" name="profile_pic" class="file-upload-default">
+                                        <input type="file" name="profile_pic" id="profile_pic"
+                                               class="file-upload-default">
                                         <div class="input-group col-xs-12">
                                             <input type="text" class="form-control input-default file-upload-info"
                                                    placeholder="Upload Image" disabled>
@@ -109,7 +114,7 @@
 
 
                                     <script>
-                                        selectElement('gender', "<?php echo trim($row['gender']);?>");
+                                        selectElement('gender', "<?php echo trim($user_row['gender']);?>");
 
                                         function selectElement(id, valueToSelect) {
                                             let element = document.getElementById(id);

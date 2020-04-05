@@ -16,10 +16,55 @@ if (isset($_POST['age_hide']))
 else {
     $age_h = "0";
 }
+$file_path = '';
+if (isset($_FILES['profile_pic']['tmp_name'])) {
 
+    $uploadOk = 1;
+    $tmpFilePath = $_FILES['profile_pic']['tmp_name'];
+    $tmpFilePath1 = $_FILES['profile_pic']['name'];
+
+
+//Make sure we have a filepath
+    if ($tmpFilePath != "") {
+
+        if ($_FILES["profile_pic"]["size"] < 5000000) {
+            //save the filename
+            $shortname = $_FILES['profile_pic']['name'];
+
+            //save the url and the file
+
+            $imageFileType = strtolower(pathinfo($tmpFilePath1, PATHINFO_EXTENSION));
+            $filePath = "upload/" . $_SESSION["id"] . '-photo.' . $imageFileType;
+//            $msg = '<script>alert("' . $filePath . '")</script>';
+//            echo $msg;
+            if ($imageFileType == "jpg" || $imageFileType == "jpeg" || $imageFileType == "png") {
+
+                move_uploaded_file($tmpFilePath, $filePath);
+//                $msg = '<script>alert("Uploaded.")</script>';
+//                echo $msg;
+                $file_path = $filePath;
+
+            } else {
+                $uploadOk = 0;
+                $msg = '<script>alert("Sorry, File format is not supported. Upload Only jpg,jpeg,png .")</script>';
+                echo $msg;
+            }
+            //}
+        } else {
+            $uploadOk = 0;
+            $msg = '<script>alert("Sorry, your file should not be more than 5MB.")</script>';
+            echo $msg;
+        }
+    }
+} else {
+    $msg = '<script>alert("This is empty")</script>';
+    echo $msg;
+}
 
 $sql = "update `users` set 
 `fname` ='" . $_POST['first_name'] . "',
+`about` ='" . $_POST['about_me'] . "',
+`jobtitle` ='" . $_POST['Job_title'] . "',
 `lname` ='" . $_POST['last_name'] . "',
 `lang` ='" . $_POST['lang'] . "',
 `contact` ='" . $_POST['contact'] . "',
@@ -33,9 +78,9 @@ $sql = "update `users` set
 `facebook` ='" . $_POST['facebook'] . "',
 `linkedin` ='" . $_POST['linkedid'] . "',
 `instagram` ='" . $_POST['insta'] . "',
-`website` ='" . $_POST['web'] . "'
- 
- 
+`website` ='" . $_POST['web'] . "',
+`profileimage` ='" . $file_path . "'
+
  where id=" . $_SESSION['id'] . " ";
 $res = mysqli_query($con, $sql);
 ?>

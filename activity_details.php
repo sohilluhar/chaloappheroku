@@ -7,10 +7,11 @@
     $activity_row = mysqli_fetch_assoc($res);
     $user_row = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM users where  id=" . $activity_row['userid']));
     $useractivity_done = mysqli_num_rows(mysqli_query($con, "SELECT type FROM activity where  userid=" . $activity_row['userid']));
-
     $checkjoinres = mysqli_query($con, "SELECT status FROM activity_request where  activity_requestid=" . $activity_row['id'] . " and userid=" . $_SESSION['id']);
     $statusr = mysqli_fetch_assoc($checkjoinres);
-    $status = $statusr['status'];
+    if (mysqli_num_rows($checkjoinres) > 1)
+        $status = $statusr['status'];
+    else $status = " ";
     ?>
 
 

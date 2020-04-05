@@ -3,8 +3,9 @@
 
 <head>
     <?php include('include/head.php'); ?>
+    <?php
 
-
+    ?>
 </head>
 
 <body>
@@ -43,18 +44,18 @@
                                     <div class="row align-items-center mb-2">
                                         <div class="col-12">
                                             <div class="input-group">
-                                                <input type=" text" class="form-control"
+                                                <input type="text" class="form-control"
                                                        placeholder="Search activity"
                                                        name="activity_type" id="activity_type"
                                                     <?php if (isset($_SESSION['activity_type'])) {
                                                         print 'value="' . trim($_SESSION['activity_type']) . '"';
-                                                        unset($_SESSION['activity_type']);
+//                                                        unset($_SESSION['activity_type']);
+
                                                     }
                                                     ?>/>
                                                 <span class="input-group-text bg-white ml-4">
                                                         <a href="activities.php">
-                                                            <i
-                                                                    class="mdi mdi-dots-horizontal mdi-24px text-primary"></i>
+                                                            <i class="mdi mdi-dots-horizontal mdi-24px text-primary"></i>
                                                         </a>
                                                     </span>
 
@@ -64,7 +65,7 @@
 
 
                                     <div class="radio-group">
-
+                                        <input type="text" id="radio-value" name="radio-value" value="" hidden/>
                                         <p class="text-primary mb-4">Your Activity</p>
 
 
@@ -107,10 +108,11 @@
 
                                             <div class="col-4">
                                                 <div class="card card-profile text-center radio"
-                                                     data-value="Hiking"> <span class="mt-3 mb-1 text-primary">
+                                                     data-value="Family Restaurant"> <span
+                                                            class="mt-3 mb-1 text-primary">
                                                             <img class="align-self-center" src="images/recomand/h1.jpeg"
                                                                  alt="" style="heigth:80px; width: 80px;"></span>
-                                                    <p class="text-dark p-style">Family Resturant</p>
+                                                    <p class="text-dark p-style">Family Restaurant</p>
                                                 </div>
                                             </div>
 
@@ -121,7 +123,7 @@
                                                             <img class="align-self-center" src="images/recomand/h2.jpg"
                                                                  alt="" style="heigth:80px; width: 80px;">
                                                         </span>
-                                                    <p class="text-dark p-style">Family Resturant</p>
+                                                    <p class="text-dark p-style">Family Restaurant</p>
                                                 </div>
                                             </div>
 
@@ -130,7 +132,7 @@
                                                      data-value="Walking"> <span class="mt-3 mb-1 text-primary">
                                                             <img class="align-self-center" src="images/recomand/h3.jpg"
                                                                  alt="" style="heigth:60px; width: 60px;"></span>
-                                                    <p class="text-dark p-style">Family Resturant</p>
+                                                    <p class="text-dark p-style">Family Restaurant</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -141,9 +143,9 @@
                                     <div class="row align-items-center mb-2">
                                         <div class="col-12">
                                             <div class="input-group">
-                                                <input type=" text" class="form-control"
+                                                <input type="text" class="form-control"
                                                        placeholder="Search for a place"
-                                                       name="location" id="location"
+                                                       name="location" id="location" value="Mumbai"
                                                 />
                                                 <span class="input-group-text bg-white ml-4">
                                                         <a href="map.php">
@@ -189,129 +191,130 @@
                                         <label class="form-check-label">Let others propose time changes</label>
                                     </div>
 
-                                    <div class="form-group mt-3">
-                                        <label class="m-t-20 text-primary">No. of peoples you'd like to join</label>
-                                        <div class="radio mb-3">
-                                            <label>
-                                                <input type="radio" name="optradio"><i
-                                                        class="mdi mdi-human-male mdi-18px"></i>
-                                            </label>
-                                            <label class="position-relative">
-                                                <input type="radio" name="optradio">
-                                                <i class="mdi mdi-human-male mdi-18px"></i>
-                                                <i class="mdi mdi-human-male mdi-18px position-absolute"
-                                                   style="left:25px;"></i>
-                                            </label>
+                                    <!--                                    <div class="form-group mt-3">-->
+                                    <!--                                        <label class="m-t-20 text-primary">No. of peoples you'd like to join</label>-->
+                                    <!--                                        <div class="radio mb-3">-->
+                                    <!--                                            <label>-->
+                                    <!--                                                <input type="radio" name="optradio"><i-->
+                                    <!--                                                        class="mdi mdi-human-male mdi-18px"></i>-->
+                                    <!--                                            </label>-->
+                                    <!--                                            <label class="position-relative">-->
+                                    <!--                                                <input type="radio" name="optradio">-->
+                                    <!--                                                <i class="mdi mdi-human-male mdi-18px"></i>-->
+                                    <!--                                                <i class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                   style="left:25px;"></i>-->
+                                    <!--                                            </label>-->
+                                    <!---->
+                                    <!--                                            <label class="position-relative ml-2">-->
+                                    <!--                                                <input type="radio" name="optradio"><i-->
+                                    <!--                                                        class="mdi mdi-human-male mdi-18px"></i><i-->
+                                    <!--                                                        class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                        style="left:22px;"></i>-->
+                                    <!--                                                <i class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                   style="left:30px;"></i>-->
+                                    <!--                                            </label>-->
+                                    <!---->
+                                    <!--                                            <label class="position-relative ml-3">-->
+                                    <!--                                                <input type="radio" name="optradio"><i-->
+                                    <!--                                                        class="mdi mdi-human-male mdi-18px"></i><i-->
+                                    <!--                                                        class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                        style="left:22px;"></i>-->
+                                    <!--                                                <i class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                   style="left:30px;"></i>-->
+                                    <!--                                                <i class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                   style="left:38px;"></i>-->
+                                    <!--                                            </label>-->
+                                    <!---->
+                                    <!--                                            <label class="position-relative ml-4">-->
+                                    <!--                                                <input type="radio" name="optradio"><i-->
+                                    <!--                                                        class="mdi mdi-human-male mdi-18px"></i><i-->
+                                    <!--                                                        class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                        style="left:22px;"></i>-->
+                                    <!--                                                <i class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                   style="left:30px;"></i>-->
+                                    <!--                                                <i class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                   style="left:38px;"></i>-->
+                                    <!--                                                <i class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                   style="left:47px;"></i>-->
+                                    <!--                                            </label>-->
+                                    <!---->
+                                    <!--                                            <label class="position-relative ml-5">-->
+                                    <!--                                                <input type="radio" name="optradio"><i-->
+                                    <!--                                                        class="mdi mdi-human-male mdi-18px"></i><i-->
+                                    <!--                                                        class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                        style="left:22px;"></i>-->
+                                    <!--                                                <i class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                   style="left:30px;"></i>-->
+                                    <!--                                                <i class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                   style="left:38px;"></i>-->
+                                    <!--                                                <i class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                   style="left:47px;"></i>-->
+                                    <!--                                                <i class="mdi mdi-human-male mdi-18px position-absolute"-->
+                                    <!--                                                   style="left:54px;"></i>-->
+                                    <!--                                            </label>-->
+                                    <!---->
+                                    <div class="form-group">
 
-                                            <label class="position-relative ml-2">
-                                                <input type="radio" name="optradio"><i
-                                                        class="mdi mdi-human-male mdi-18px"></i><i
-                                                        class="mdi mdi-human-male mdi-18px position-absolute"
-                                                        style="left:22px;"></i>
-                                                <i class="mdi mdi-human-male mdi-18px position-absolute"
-                                                   style="left:30px;"></i>
-                                            </label>
-
-                                            <label class="position-relative ml-3">
-                                                <input type="radio" name="optradio"><i
-                                                        class="mdi mdi-human-male mdi-18px"></i><i
-                                                        class="mdi mdi-human-male mdi-18px position-absolute"
-                                                        style="left:22px;"></i>
-                                                <i class="mdi mdi-human-male mdi-18px position-absolute"
-                                                   style="left:30px;"></i>
-                                                <i class="mdi mdi-human-male mdi-18px position-absolute"
-                                                   style="left:38px;"></i>
-                                            </label>
-
-                                            <label class="position-relative ml-4">
-                                                <input type="radio" name="optradio"><i
-                                                        class="mdi mdi-human-male mdi-18px"></i><i
-                                                        class="mdi mdi-human-male mdi-18px position-absolute"
-                                                        style="left:22px;"></i>
-                                                <i class="mdi mdi-human-male mdi-18px position-absolute"
-                                                   style="left:30px;"></i>
-                                                <i class="mdi mdi-human-male mdi-18px position-absolute"
-                                                   style="left:38px;"></i>
-                                                <i class="mdi mdi-human-male mdi-18px position-absolute"
-                                                   style="left:47px;"></i>
-                                            </label>
-
-                                            <label class="position-relative ml-5">
-                                                <input type="radio" name="optradio"><i
-                                                        class="mdi mdi-human-male mdi-18px"></i><i
-                                                        class="mdi mdi-human-male mdi-18px position-absolute"
-                                                        style="left:22px;"></i>
-                                                <i class="mdi mdi-human-male mdi-18px position-absolute"
-                                                   style="left:30px;"></i>
-                                                <i class="mdi mdi-human-male mdi-18px position-absolute"
-                                                   style="left:38px;"></i>
-                                                <i class="mdi mdi-human-male mdi-18px position-absolute"
-                                                   style="left:47px;"></i>
-                                                <i class="mdi mdi-human-male mdi-18px position-absolute"
-                                                   style="left:54px;"></i>
-                                            </label>
-
-                                            <div class="form-group">
-
-                                                <select class="form-control" id="sel1" name="sel1">
-                                                    <option value="1">1 peoples</option>
-                                                    <option value="2">2 peoples</option>
-                                                    <option value="3">3 peoples</option>
-                                                    <option value="4">4 peoples</option>
-                                                    <option value="5">5 peoples</option>
-                                                    <option value="6">6 peoples</option>
-                                                    <option value="7">7 peoples</option>
-                                                    <option value="8">8 peoples</option>
-                                                    <option value="9">9 peoples</option>
-                                                    <option value="10">10 peoples</option>
-                                                    <option value="11">11 peoples</option>
-                                                    <option value="12">12 peoples</option>
-                                                    <option value="13">13 peoples</option>
-                                                    <option value="14">14 peoples</option>
-                                                    <option value="15">15 peoples</option>
-                                                    <option value="16">16 peoples</option>
-                                                    <option value="17">17 peoples</option>
-                                                    <option value="18">18 peoples</option>
-                                                    <option value="19">19 peoples</option>
-                                                    <option value="20">20 peoples</option>
-                                                    <option value="21">21 peoples</option>
-                                                    <option value="22">22 peoples</option>
-                                                    <option value="23">23 peoples</option>
-                                                    <option value="24">24 peoples</option>
-                                                    <option value="25">25 peoples</option>
-                                                    <option value="26">26 peoples</option>
-                                                    <option value="27">27 peoples</option>
-                                                    <option value="28">28 peoples</option>
-                                                </select>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label class="text-primary">Notes <span
-                                                        class="text-muted">(optional)</span></label>
-                                            <textarea class="form-control h-100px" rows="4" id="act_note"
-                                                      name="act_note"
-                                                      placeholder="e.g. Looks like it'sgoing to be hot today, bring lots of water , Meet at Edit D of the subway...."></textarea>
-                                        </div>
-
+                                        <select class="form-control" id="sel1" name="sel1">
+                                            <option value="1">1 peoples</option>
+                                            <option value="2">2 peoples</option>
+                                            <option value="3">3 peoples</option>
+                                            <option value="4">4 peoples</option>
+                                            <option value="5">5 peoples</option>
+                                            <option value="6">6 peoples</option>
+                                            <option value="7">7 peoples</option>
+                                            <option value="8">8 peoples</option>
+                                            <option value="9">9 peoples</option>
+                                            <option value="10">10 peoples</option>
+                                            <option value="11">11 peoples</option>
+                                            <option value="12">12 peoples</option>
+                                            <option value="13">13 peoples</option>
+                                            <option value="14">14 peoples</option>
+                                            <option value="15">15 peoples</option>
+                                            <option value="16">16 peoples</option>
+                                            <option value="17">17 peoples</option>
+                                            <option value="18">18 peoples</option>
+                                            <option value="19">19 peoples</option>
+                                            <option value="20">20 peoples</option>
+                                            <option value="21">21 peoples</option>
+                                            <option value="22">22 peoples</option>
+                                            <option value="23">23 peoples</option>
+                                            <option value="24">24 peoples</option>
+                                            <option value="25">25 peoples</option>
+                                            <option value="26">26 peoples</option>
+                                            <option value="27">27 peoples</option>
+                                            <option value="28">28 peoples</option>
+                                        </select>
                                     </div>
-                                    <div class="text-center">
-                                        <button class="btn btn-primary btn-block" type="submit">Broadcast Activity
-                                        </button>
-                                    </div>
-                                </form>
-
 
                             </div>
 
 
+                            <div class="form-group">
+                                <label class="text-primary">Notes <span
+                                            class="text-muted">(optional)</span></label>
+                                <textarea class="form-control h-100px" rows="4" id="act_note"
+                                          name="act_note"
+                                          placeholder="e.g. Looks like it'sgoing to be hot today, bring lots of water , Meet at Edit D of the subway...."></textarea>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary btn-block" type="submit">Broadcast Activity
+                            </button>
                         </div>
                     </div>
+                    </form>
+
+
                 </div>
+
+
             </div>
-            <!-- Card End  -->
+        </div>
+        </div>
+        </div>
+        <!-- Card End  -->
 
         </div>
         </div>

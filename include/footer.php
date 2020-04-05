@@ -60,7 +60,8 @@
         console.log($(this).closest());
 
         $(this).parents('.radio-group').find('input').val(val);
-        document.getElementById("activitiesform").submit();
+        window.location.href = "./setactivitytype.php?radio-value=" + val;
+        // document.getElementById("activitiesform").submit();
 
     });
 </script>
