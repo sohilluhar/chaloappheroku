@@ -27,7 +27,7 @@
                     <a href="profile.php">
                         <div class="user-img c-pointer position-relative float-right">
                             <span class="activity active"></span>
-                            <img src="images/user/2.png" height="40" width="40" alt="">
+                            <img src="<?php echo $_SESSION['profileimage'] ?>" height="40" width="40" alt="">
                         </div>
                     </a>
                 </div>
@@ -59,8 +59,9 @@
                                 <div class="card-body">
                                     <div class="bootstrap-media">
                                         <div class="media">
-                                            <img class="align-self-start mr-3 circle-40" src="images/avatar/1.jpg"
-                                                 alt="">
+                                            <img class="align-self-start mr-3 circle-40"
+                                                 src="<?php echo $user_row['profileimage'] ?>""
+                                            alt="">
                                             <div class="media-body">
                                                 <h5 class="mt-0">  <?php echo $user_row['name'] ?>
 

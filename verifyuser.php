@@ -10,6 +10,7 @@ if (mysqli_num_rows($res) >= 1) {
     $_SESSION["login"] = "True";
     $_SESSION["id"] = $row['id'];
     $_SESSION["name"] = $row['name'];
+    $_SESSION["profileimage"] = $row['profileimage'];
 
     ?>
     <script>

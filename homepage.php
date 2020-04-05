@@ -25,7 +25,7 @@
                     <a href="profile.php">
                         <div class="user-img c-pointer position-relative float-right">
                             <span class="activity active"></span>
-                            <img src="images/user/2.png" height="40" width="40" alt="">
+                            <img src="<?php echo $_SESSION['profileimage'] ?>" height="40" width="40" alt="">
                         </div>
                     </a>
                 </div>
