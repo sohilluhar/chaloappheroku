@@ -116,7 +116,50 @@
                                 </div>
 
 
-                                <button type="submit" name="register" class="btn btn-primary btn-block"
+                                <div class="modal fade" id="disclaimer">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Disclaimer</h5>
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    <span>&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Chalo App mobile app (the "Service") is a service used to attend
+                                                sporting activities and
+                                                activities of a physical nature.
+
+                                                LetsGo Group Limited does not directly organise the activities, it is
+                                                used only as a
+                                                communication tool between participants.
+
+                                                In no event shall LetsGO Group Limited be liable for any special,
+                                                direct, indirect,
+                                                consequential, or incidental damages or any damages whatsoever, whether
+                                                in an action of
+                                                contract, negligence or other tort, arising out of or in connection with
+                                                the use of the
+                                                Service or the contents of the Service. reserves the right to make
+                                                additions, deletions, or
+                                                modification to the contents on the Service at any time without prior
+                                                notice.
+
+                                                Last updated: January 17, 2019
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger btn-sm"
+                                                        data-dismiss="modal">Disagree
+                                                </button>
+                                                <button type="submit" name="remove_user" class="btn btn-success btn-sm">
+                                                    Agree
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="button" name="register" class="btn btn-primary btn-block"
                                         data-toggle="modal" data-target="#disclaimer">Register
                                 </button>
 
@@ -167,43 +210,93 @@
 
     <form action="">
         <!-- Modal -->
-        <div class="modal fade" id="disclaimer">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Disclaimer</h5>
-                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Chalo App mobile app (the "Service") is a service used to attend sporting activities and
-                        activities of a physical nature.
-
-                        LetsGo Group Limited does not directly organise the activities, it is used only as a
-                        communication tool between participants.
-
-                        In no event shall LetsGO Group Limited be liable for any special, direct, indirect,
-                        consequential, or incidental damages or any damages whatsoever, whether in an action of
-                        contract, negligence or other tort, arising out of or in connection with the use of the
-                        Service or the contents of the Service. reserves the right to make additions, deletions, or
-                        modification to the contents on the Service at any time without prior notice.
-
-                        Last updated: January 17, 2019
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Disagree</button>
-                        <button type="button" name="remove_user" class="btn btn-success btn-sm">Agree</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </form>
 
     <!-- Main Body-->
 </section><!-- PARENT SECTION -->
 
+<script src="plugins/common/common.min.js"></script>
+<script src="js/custom.min.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/gleek.js"></script>
+<script src="js/styleSwitcher.js"></script>
 
-<?php include('include/footer.php'); ?>
 
+<script src="plugins/sweetalert/js/sweetalert.min.js"></script>
+<script src="plugins/sweetalert/js/sweetalert.init.js"></script>
+<script src="plugins/moment/moment.js"></script>
+<script src="plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+<!-- Clock Plugin JavaScript -->
+<script src="plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+<!-- Color Picker Plugin JavaScript -->
+<script src="plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+<script src="plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+<script src="plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+<!-- Date Picker Plugin JavaScript -->
+<script src="plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<!-- Date range Plugin JavaScript -->
+<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<script src="plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+<script src="js/plugins-init/form-pickers-init.js"></script>
+
+<script>
+    jQuery(function ($) {
+
+        // Prevent Google Maps from hijacking scroll
+        var onMapMouseleaveHandler = function (event) {
+            var that = $(this);
+            that.on('click', onMapClickHandler);
+            that.off('mouseleave', onMapMouseleaveHandler);
+            that.find('iframe').css("pointer-events", "none");
+        }
+
+        var onMapClickHandler = function (event) {
+            var that = $(this);
+            // Disable the click handler until the user leaves the map area
+            that.off('click', onMapClickHandler);
+            // Enable scrolling zoom
+            that.find('iframe').css("pointer-events", "auto");
+            // Handle the mouse leave event
+            that.on('mouseleave', onMapMouseleaveHandler);
+        }
+
+        // Enable map zooming with mouse scroll when the user clicks the map
+        $('.responsive-map').on('click', onMapClickHandler);
+
+    });
+</script>
+
+
+<script>
+    $('.radio-group .radio').click(function () {
+        $('.card').removeClass('selected');
+        $(this).addClass('selected');
+        var val = $(this).attr('data-value');
+        console.log(val);
+        console.log($(this).closest());
+
+        $(this).parents('.radio-group').find('input').val(val);
+        // window.location.href = "./setactivitytype.php?radio-value=" + val;
+        // document.getElementById("activitiesform").submit();
+
+    });
+</script>
+
+
+<script>
+    (function ($) {
+        $(function () {
+            $('.file-upload-browse').on('click', function () {
+                var file = $(this).parent().parent().parent().find('.file-upload-default');
+                file.trigger('click');
+            });
+            $('.file-upload-default').on('change', function () {
+                $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i,
+                    ''));
+            });
+        });
+    })(jQuery);
+</script>
 
 </body>

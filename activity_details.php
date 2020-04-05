@@ -9,7 +9,7 @@
     $useractivity_done = mysqli_num_rows(mysqli_query($con, "SELECT type FROM activity where  userid=" . $activity_row['userid']));
     $checkjoinres = mysqli_query($con, "SELECT status FROM activity_request where  activity_requestid=" . $activity_row['id'] . " and userid=" . $_SESSION['id']);
     $statusr = mysqli_fetch_assoc($checkjoinres);
-    if (mysqli_num_rows($checkjoinres) > 1)
+    if (mysqli_num_rows($checkjoinres) >= 1)
         $status = $statusr['status'];
     else $status = " ";
     ?>

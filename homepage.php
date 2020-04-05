@@ -116,7 +116,7 @@
         for (i = 0; i < locations.length; i++) {
             var iconr = {
                 url: locations[i][5], // url
-                scaledSize: new google.maps.Size(32, 32), // scaled size
+                scaledSize: new google.maps.Size(48, 48), // scaled size
                 origin: new google.maps.Point(0, 0), // origin
                 anchor: new google.maps.Point(0, 0) // anchor
             };
