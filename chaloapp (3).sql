@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 05, 2020 at 09:06 AM
+-- Generation Time: Apr 05, 2020 at 09:41 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -50,7 +50,9 @@ CREATE TABLE `activity` (
 
 INSERT INTO `activity` (`id`, `userid`, `type`, `location`, `date`, `stime`, `etime`, `time_change`, `nopeople`, `note`, `glat`, `glong`, `marker`) VALUES
 (9, 3, 'Beach', '', '2020-04-20', '11:00', '12:00 ', '0', '15 ', ' ', '19.09691649705337 ', '72.82654523849487 ', 'p in.png'),
-(10, 3, 'Family Restaurant', 'Mumbai', '2020-04-12', '10:22', '11:22 ', '1', '12 ', ' ', '19.030800999590724 ', '72.84072875976562 ', 'pin.png ');
+(10, 3, 'Family Restaurant', 'Mumbai', '2020-04-12', '10:22', '11:22 ', '1', '12 ', ' ', '19.030800999590724 ', '72.84072875976562 ', 'pin.png '),
+(11, 3, 'Hiking', 'Mumbai', '2020-04-10', '11:00', '12:00 ', '1', '5 ', 'Notes ', '19.175977029690834 ', '72.79532432556152 ', 'Hiking.png'),
+(12, 3, 'Camping', 'Mumbai', '2020-03-12', '11:40', '12:40 ', '0', '15', 'take note', '19.16462764077329', '72.78701829586808', 'Camping.png');
 
 -- --------------------------------------------------------
 
@@ -140,7 +142,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `activity`
 --
 ALTER TABLE `activity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `activity_request`
