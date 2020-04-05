@@ -33,7 +33,11 @@
             <div class="mobile-bottom-nav__item">
                 <a href="myactivity.php" class="text-white">
                     <div class="mobile-bottom-nav__item-content text-center">
-                        <i class="mdi mdi-view-list mdi-24px"></i>
+                        <!-- <i class="mdi mdi-view-list mdi-24px"></i>
+                        <span class="badge gradient-1 badge-pill badge-primary">3</span> -->
+
+                        <i class="mdi mdi-view-list mdi-24px text-white"> <span
+                                    class="badge gradient-2 badge-pill badge-danger"> 3 </span></i>
                         My Activities
                     </div>
                 </a>

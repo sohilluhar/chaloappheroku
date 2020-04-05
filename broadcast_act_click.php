@@ -139,7 +139,7 @@
                     </p>
                     <!--                    TODO:: Replace text-->
                     <p><a class="btn-link"
-                          href="whatsapp://send?text=Hey Check this activity ... on  http://sohilluhar.co/chaloapp/"
+                          href="whatsapp://send?text=Hey, I am Inviting to join my activity on Chalo App Download Chalo App from http://sohilluhar.co/chaloapp/"
                           data-action="share/whatsapp/share"
                         >Share</a></p>
                     <p>Mute Chat</p>

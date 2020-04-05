@@ -13,16 +13,21 @@
         <div class="container ">
             <div class="row align-items-center">
                 <div class="col-3 custom_icon1">
-                    <i class="mdi mdi-settings mdi-24px text-white"></i>
+                    <a href="explore.php">
+                        <i class="mdi mdi-collage mdi-24px text-white"></i>
+                    </a>
+
                 </div>
                 <div class="col-6">
                     <h2 class="text-white text-center"><span class="logo">Chalo App</span></h2>
                 </div>
                 <div class="col-3 ">
-                    <div class="user-img c-pointer position-relative float-right">
-                        <span class="activity active"></span>
-                        <img src="images/user/2.png" height="40" width="40" alt="">
-                    </div>
+                    <a href="profile.php">
+                        <div class="user-img c-pointer position-relative float-right">
+                            <span class="activity active"></span>
+                            <img src="images/user/2.png" height="40" width="40" alt="">
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

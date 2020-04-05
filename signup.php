@@ -176,7 +176,19 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        terms and condition .........
+                        Chalo App mobile app (the "Service") is a service used to attend sporting activities and
+                        activities of a physical nature.
+
+                        LetsGo Group Limited does not directly organise the activities, it is used only as a
+                        communication tool between participants.
+
+                        In no event shall LetsGO Group Limited be liable for any special, direct, indirect,
+                        consequential, or incidental damages or any damages whatsoever, whether in an action of
+                        contract, negligence or other tort, arising out of or in connection with the use of the
+                        Service or the contents of the Service. reserves the right to make additions, deletions, or
+                        modification to the contents on the Service at any time without prior notice.
+
+                        Last updated: January 17, 2019
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Disagree</button>

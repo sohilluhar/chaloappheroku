@@ -108,11 +108,10 @@
 
                                             <div class="col-4">
                                                 <div class="card card-profile text-center radio"
-                                                     data-value="Family Restaurant"> <span
-                                                            class="mt-3 mb-1 text-primary">
+                                                     data-value="Hiking"> <span class="mt-3 mb-1 text-primary">
                                                             <img class="align-self-center" src="images/recomand/h1.jpeg"
                                                                  alt="" style="heigth:80px; width: 80px;"></span>
-                                                    <p class="text-dark p-style">Family Restaurant</p>
+                                                    <p class="text-dark p-style">Family Resturant</p>
                                                 </div>
                                             </div>
 

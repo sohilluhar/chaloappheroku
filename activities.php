@@ -42,96 +42,130 @@
 
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Hiking">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary">
+                                        <!-- <i class="icon-people"></i> -->
+                                        <img class="" style="height:40px; width:40px;"
+                                             src="images/activities/Hiking.png" alt="">
+                                    </span>
                                 <p class="text-dark p-style">Hiking</p>
                             </div>
                         </div>
 
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Paddleboarding">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary">
+                                        <img class="" style="height:40px; width:40px;"
+                                             src="images/activities/Paddleboarding.png" alt=""></span>
                                 <p class="text-dark p-style">Paddleboarding</p>
                             </div>
                         </div>
 
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Walking">
-                                <span class="mb-1 text-primary"><i class="mdi mdi-walk"></i></span>
+                                    <span class="mb-1 mt-2 text-primary">
+                                        <img class="" style="height:40px; width:40px;"
+                                             src="images/activities/Walking.png" alt="">
+                                    </span>
                                 <p class="text-dark p-style">Walking</p>
                             </div>
                         </div>
 
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Beach">
-                                <span class="mb-1 text-primary"><i class="mdi mdi-beach"></i></span>
+                                    <span class="mb-1 mt-2 text-primary">
+                                        <img class="" style="height:40px; width:40px;" src="images/activities/Beach.png"
+                                             alt="">
+                                    </span>
                                 <p class="text-dark p-style">Beach</p>
                             </div>
                         </div>
 
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Paintballing">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary">
+                                        <img class="" style="height:40px; width:40px;"
+                                             src="images/activities/Paintballing.png" alt="">
+                                    </span>
                                 <p class="text-dark p-style">Paintballing</p>
                             </div>
                         </div>
 
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Hiking with Dog">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary">
+                                        <img class="" style="height:40px; width:40px;"
+                                             src="images/activities/Hiking with Dog.png" alt="">
+                                    </span>
                                 <p class="text-dark p-style">Hiking with Dog</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Beach BBQ">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Beach BBQ.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Beach BBQ</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Camping">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Camping.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Camping</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Fishing">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Fishing.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Fishing</p>
                             </div>
                         </div>
                         <div class="col-4">
-                            <div class="card card-profile text-center radio" data-value="Garderning">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
-                                <p class="text-dark p-style">Garderning</p>
+                            <div class="card card-profile text-center radio" data-value="Gardening">
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Gardening.png"
+                                                                              alt=""></span>
+                                <p class="text-dark p-style">Gardening</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Skate Boarding">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Skate Boarding.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Skate Boarding</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Skiing">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Skiing.png" alt=""></span>
                                 <p class="text-dark p-style">Skiing</p>
                             </div>
                         </div>
                         <div class="col-4">
-                            <div class="card card-profile text-center radio" data-value="Snokeling">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
-                                <p class="text-dark p-style">Snokeling</p>
+                            <div class="card card-profile text-center radio" data-value="Snorkeling">
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Snorkeling.png"
+                                                                              alt=""></span>
+                                <p class="text-dark p-style">Snorkeling</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Bird Watching">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Bird Watching.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Bird Watching</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Picnic">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Picnic.png" alt=""></span>
                                 <p class="text-dark p-style">Picnic</p>
                             </div>
                         </div>
@@ -143,79 +177,103 @@
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Dog Walking">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Dog Walking.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Dog Walking</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Kayaking">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Kayaking.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Kayaking</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Canoeing">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Canoeing.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Canoeing</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Trail Running">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Trail Running.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Trail Running</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Running">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Running.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Running</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Cycling">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Cycling.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Cycling</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Mountain Biking">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Mountain Biking.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Mountain Biking</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Gym">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Gym.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Gym</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Museum">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Museum.png" alt=""></span>
                                 <p class="text-dark p-style">Museum</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="City Tour">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/City Tour.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">City Tour</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Wedding">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Wedding.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Wedding</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Photo Walk">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 mt-2 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                              src="images/activities/Photo Walk.png"
+                                                                              alt=""></span>
                                 <p class="text-dark p-style">Photo Walk</p>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card card-profile text-center radio" data-value="Long Drive">
-                                <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                                    <span class="mb-1 text-primary"><img class="" style="height:40px; width:40px;"
+                                                                         src="images/activities/Long Drive.png" alt=""></span>
                                 <p class="text-dark p-style">Long Drive</p>
                             </div>
                         </div>
