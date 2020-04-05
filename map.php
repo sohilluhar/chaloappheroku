@@ -17,7 +17,7 @@
         <div class="container ">
             <div class="row align-items-center">
                 <div class="col-3 custom_icon1">
-                    <a href="broadcast_act_click.php">
+                    <a href="edit_activity.php">
                         <i class="mdi mdi-keyboard-backspace mdi-24px text-white"></i>
                     </a>
                 </div>

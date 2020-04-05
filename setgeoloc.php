@@ -6,8 +6,8 @@ $_SESSION["long"] = $_POST['longitude'];
 //$_SESSION["name"] = $row['name'];
 
 
-?><
-!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

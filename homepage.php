@@ -88,7 +88,7 @@
 
             while ($row = mysqli_fetch_assoc($res)) {
                 $i = 0;
-                echo "    ['" . $row['type'] . "'," . $row['glat'] . " ," . $row['glong'] . ", " . $i . ", " . $row['id'] . ",'images/" . $row['marker'] . "'],";
+                echo "    ['" . $row['type'] . "'," . $row['glat'] . " ," . $row['glong'] . ", " . $i . ", " . $row['id'] . ",'images/activities/" . $row['marker'] . "'],";
                 $i = $i + 1;
 
             }
@@ -112,11 +112,18 @@
 
         var marker, i;
 
+
         for (i = 0; i < locations.length; i++) {
+            var iconr = {
+                url: locations[i][5], // url
+                scaledSize: new google.maps.Size(32, 32), // scaled size
+                origin: new google.maps.Point(0, 0), // origin
+                anchor: new google.maps.Point(0, 0) // anchor
+            };
             marker = new google.maps.Marker({
                 position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                 map: map,
-                icon: locations[i][5]
+                icon: iconr
             });
 
             google.maps.event.addListener(marker, 'click', (function (marker, i) {
